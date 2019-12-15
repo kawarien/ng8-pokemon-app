@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
-
+import { Component} from '@angular/core';
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-pockemon-app';
+
+  public constructor(private titleService: Title) {}
+
+  public updateTitle(title: string) {
+    this.titleService.setTitle(title);
+  }
+
 }
